@@ -1,0 +1,266 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: poppins, sans-serif;
+   
+    
+}
+
+body{
+    display: grid;
+    grid-template-areas: "header"
+                        "menu"
+                        "main"
+                        "productos"
+                        "footer";
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-columns: 1fr;
+    background: rgb(212,182,182);
+    background: radial-gradient(circle, rgba(212,182,182,1) 0%, rgba(141,109,223,1) 100%);
+
+
+    header {
+        grid-area: header;
+        background-color: #8d8dcf;
+    }
+    
+    header h2 {
+        color: white;
+        text-align: center;
+        margin: 10px;
+        padding: 15px;
+    }
+    
+    nav {
+        grid-area: menu;
+        background-color: #8d6ddf;
+        padding: 15px;
+    }
+    
+    nav ul {
+        list-style: none;
+        text-align: center;
+    }
+    
+    nav ul li {
+        display: inline;
+        margin: 1rem;
+    }
+    
+    nav ul li a {
+        text-decoration: none;
+        color: whitesmoke;
+    }
+    
+    nav ul li a:hover {
+        transition: all 0.3s ease;
+        color: black;
+        background-color: aliceblue;
+        padding: 0.5rem;
+        border-radius: 45%;
+        border-bottom: rgb(90, 62, 174);
+    }
+    
+    
+    main{
+
+        grid-area: main;
+        background-image: url(https://wallpapers.com/images/high/toy-story-cloud-vlir1rrcz78all06.webp);
+        min-height: 35vh;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-blend-mode: lighten;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    section {
+        grid-area: productos;
+        text-align: center;
+    }
+    
+    section h2 {
+        padding: 20px;
+    }
+    
+    .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+
+    }
+    
+    .container a {
+        text-decoration: none;
+    }
+    
+    .container img {
+        width: 250px;
+        height: 250px;
+        border-radius: 10%;
+        border-bottom: 3px solid #8d6ddf;
+    }
+    
+    .container .item {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .container h3,
+    .container p {
+        color: gray;
+    }
+    
+
+    .formulario_contacto {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .formulario_contacto fieldset {
+        border: black solid;
+        padding: 15px;
+    }
+    
+    .formulario_contacto legend {
+        text-align: center;
+        font-weight: 700;
+        padding: 5px;
+    }
+    
+    .formulario_contacto form label {
+        margin-bottom: 8px;
+        padding: 5px;
+        margin: 5px;
+        text-align: center;
+    }
+    
+    .formulario_contacto input,
+    .formulario_contacto textarea {
+        border-radius: 15px;
+        border: none;
+        border-bottom: #8d8dcf solid;
+        padding: 10px;
+        letter-spacing: 1px;
+    }
+    
+
+    footer{
+            grid-area: footer;
+            background-color: #8d8dcf ;
+            padding: 15px;
+    
+            p{
+                color: white;
+                text-align: center;
+                margin: 10px;
+                padding: 15px;
+            }
+
+            a{
+                text-decoration: none;
+
+            }
+            a:hover {
+                transition: all 0.3s ease;
+                color: black;
+                background-color: aliceblue;
+                padding: 0.5rem;
+                border-radius: 50%;
+                border-bottom: rgb(90, 62, 174);
+            }
+    }
+
+
+        
+                         
+}
+
+@media (max-width: 600px) {
+    body {
+        grid-template-areas:
+            "header"
+            "menu"
+            "main"
+            "productos"
+            "footer";
+        grid-template-rows: auto auto auto auto auto;
+        grid-template-columns: 1fr;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 0.5rem 0;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container img, .container .item {
+        width: 80%;
+        height: auto;
+    }
+
+    .formulario_contacto {
+        max-width: 90%;
+        padding: 15px;
+    }
+}
+
+
+@media (max-width: 1024px) {
+    body {
+        grid-template-areas:
+            "header"
+            "menu"
+            "main"
+            "productos"
+            "footer";
+        grid-template-rows: auto auto 1fr auto auto;
+        grid-template-columns: 1fr;
+    }
+
+    nav ul li {
+        margin: 0.75rem;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container img, .container .item {
+        width: 60%;
+        height: auto;
+    }
+
+    .formulario_contacto {
+        max-width: 80%;
+        padding: 20px;
+    }
+}
+
+
+@media (min-width: 1025px) {
+    .container {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .formulario_contacto {
+        max-width: 50%;
+    }
+}
